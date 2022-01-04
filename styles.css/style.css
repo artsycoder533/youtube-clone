@@ -13,17 +13,41 @@
     --secondary-text-clr: #A5AAAA;
     --icon-text-clr: #FFFFFF;
     --search-btn-clr: #313131;
+    --scrollbar-clr: #555555;
+    --input-background-clr: #121212
 
     /* typography */;
     --light-weight: 100;
     --reg-weight: 400;
     --bold-weight: 700;
-    
+    --logo-font: 'Pathway Gothic One', sans-serif;
+    --main-font: 'Roboto', sans-serif;
 }
 body {
-    font-family: 'Roboto', sans-serif; 
+    font-family: var(--main-font);
 }
+
 /* global styles */
+
+/* custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  background: var(--main-background-clr);
+  border-radius: border-radius
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-clr);
+  border-radius: 10px;
+}
+
 /* header */
 .header {
     display: flex;
@@ -53,8 +77,8 @@ body {
 
 .middle input{
     flex-grow: 1;
-    padding: 0.6rem;
-    background-color: var(--main-background-clr);
+    padding: 0.7rem;
+    background-color: var(--input-background-clr);
     border: none;
 }
 
@@ -72,7 +96,17 @@ body {
     margin-right: 0.5rem;
 }
 
-::-moz-placeholder
+
+.search-btn{
+    padding: 0.56rem 1.4rem;
+    font-size: 1rem;
+    background: var(--search-btn-clr);
+    border: none;
+    color: var(--secondary-text-clr);
+    font-weight: var(--light-weight);
+    margin-right: 0.5rem;
+}
+
 
 .search-btn{
     padding: 0.56rem 1.3rem;
@@ -84,7 +118,16 @@ body {
     margin-right: 0.5rem;
 }
 
-:-ms-input-placeholder
+.search-btn{
+    padding: 0.56rem 1.3rem;
+    font-size: 1rem;
+    background: var(--search-btn-clr);
+    border: none;
+    color: var(--secondary-text-clr);
+    font-weight: var(--light-weight);
+    margin-right: 0.5rem;
+}
+
 
 .search-btn{
     padding: 0.56rem 1.3rem;
@@ -96,7 +139,7 @@ body {
     margin-right: 0.5rem;
 }
 
-::-ms-input-placeholder
+
 
 .search-btn{
     padding: 0.56rem 1.3rem;
@@ -108,7 +151,7 @@ body {
     margin-right: 0.5rem;
 }
 
-::-webkit-input-placeholder
+
 
 .search-btn{
     padding: 0.56rem 1.3rem;
@@ -120,7 +163,7 @@ body {
     margin-right: 0.5rem;
 }
 
-::placeholder
+
 
 .search-btn{
     padding: 0.56rem 1.3rem;
@@ -132,7 +175,7 @@ body {
     margin-right: 0.5rem;
 }
 
-::-moz-placeholder
+
 
 .search-btn{
     padding: 0.56rem 1.3rem;
@@ -144,7 +187,7 @@ body {
     margin-right: 0.5rem;
 }
 
-:-ms-input-placeholder
+
 
 .search-btn{
     padding: 0.56rem 1.3rem;
@@ -156,40 +199,17 @@ body {
     margin-right: 0.5rem;
 }
 
-::-ms-input-placeholder
+
 
 .search-btn{
-    padding: 0.56rem 1.3rem;
+    padding: 0.58rem 1.4rem;
     font-size: 1rem;
     background: var(--search-btn-clr);
     border: none;
     color: var(--secondary-text-clr);
     font-weight: var(--light-weight);
     margin-right: 0.5rem;
-}
-
-::-webkit-input-placeholder
-
-.search-btn{
-    padding: 0.56rem 1.3rem;
-    font-size: 1rem;
-    background: var(--search-btn-clr);
-    border: none;
-    color: var(--secondary-text-clr);
-    font-weight: var(--light-weight);
-    margin-right: 0.5rem;
-}
-
-::placeholder
-
-.search-btn{
-    padding: 0.56rem 1.3rem;
-    font-size: 1rem;
-    background: var(--search-btn-clr);
-    border: none;
-    color: var(--secondary-text-clr);
-    font-weight: var(--light-weight);
-    margin-right: 0.5rem;
+    cursor: pointer;
 }
 
 .right{
@@ -224,17 +244,19 @@ body {
 
 .profile {
     width: 100%;
+    cursor: pointer;
     -o-object-fit: cover;
        object-fit: cover;
 }
 
 .hamburger {
     margin-right: 1.3rem;
-    width: 1.3rem;
-    height: 13px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    cursor: pointer;
+    background: transparent;
+}
+
+.hamburger:hover{
+    background: var(--main-background-clr);
 }
 
 .line{
@@ -244,10 +266,41 @@ body {
     background: var(--icon-text-clr);
 }
 
+.line::after,
+.line::before{
+    content: '';
+    position: absolute;
+    width: 1.2rem;
+    height: 1px;
+    background: var(--icon-text-clr);
+}
+
+.line::after{
+    transform: translateY(-6px);
+}
+
+.line::before{
+    transform: translateY(6px);
+}
+
 .youtube {
     font-weight: var(--bold-weight);
-    font-size: 1.2rem;
-    letter-spacing: -1.5px;
+    font-size: 1.3rem;
+    font-family: var(--logo-font);
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.youtube:hover::after{
+    content: 'YouTube Home';
+    position: absolute;
+    transform: translate(-15px, 30px);
+    padding: 0.6rem;
+    font-family: var(--main-font);
+    background: var(--header-backround-clr);
+    font-size: 0.7rem;
+    border: 1px solid var(--secondary-text-clr);
+    font-weight: lighter;
 }
 
 .fa-youtube{
@@ -255,6 +308,13 @@ body {
 }
 
 .left .icons{
-    font-size: 1.4rem;
-    /* color: var(--accent-clr); */
-}}
+    font-size: 1.5rem;
+}
+
+.icons {
+    cursor: pointer;
+}
+
+.logo{
+    display: flex;
+}}}
