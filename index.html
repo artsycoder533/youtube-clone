@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Roboto:wght@100;400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="scripts.css/script.js" defer></script>
     <title>Youtube Clone</title>
     <link rel="stylesheet" href="./styles.css/style.css" />
   </head>
@@ -24,9 +25,9 @@
     <header class="header">
       <nav class="nav">
         <div class="left">
-          <div class="hamburger round">
+          <a class="hamburger round" id="hamburger">
             <span class="line"></span>
-          </div>
+          </a>
           <div class="logo">
             <span class="icons"><i class="fab fa-youtube"></i></span>
             <p class="youtube">YouTube</p>
@@ -51,41 +52,49 @@
     </header>
 
     <main class="main">
-      <aside class="sidebar">
-        <div class="left">
+      <aside class="sidebar" id="sidebar">
+        <!-- <div class="left">
           <div class="hamburger round">
             <span class="line"></span>
           </div>
           <div class="logo">
             <a class="icons youtube"><i class="fab fa-youtube"></i>YouTube</a>
           </div>
-          <!-- <p class="youtube">YouTube</p> -->
-        </div>
+        </div> -->
         <div class="links">
-          <a href="" class="link"><i class="fas fa-home"></i> Home</a>
-          <a href="" class="link"><i class="far fa-compass"></i> Explore</a>
-          <a href="" class="link"><i class="fas fa-photo-video"></i> Subscriptions</a>
+          <a href="" class="link"><i class="fas fa-home"></i>Home</a>
+          <a href="" class="link"><i class="far fa-compass"></i>Explore</a>
+          <a href="" class="link"><i class="fas fa-photo-video"></i>Subscriptions</a>
           <hr>
-          <a href="" class="link"><i class="fas fa-layer-group"></i> Library</a>
-          <a href="" class="link"><i class="fas fa-history"></i> History</a>
-          <a href="" class="link"><i class="fas fa-play"></i> Your videos</a>
-          <a href="" class="link"><i class="far fa-clock"></i> Watch Later</a>
+          <a href="" class="link"><i class="fas fa-layer-group"></i>Library</a>
+          <a href="" class="link"><i class="fas fa-history"></i>History</a>
+          <a href="" class="link"><i class="fab fa-youtube"></i>Your videos</a>
+          <a href="" class="link"><i class="far fa-clock"></i>Watch Later</a>
           <hr>
-          <span>subscriptions</span>
+          <span class="sidebar-heading">subscriptions</span>
+          <a href="" class="link sub"><div class="round-sml">
+              <img class="profile" src="./images/profile.jpg" alt="">
+          </div>Kevin Powell</a>
+          <a href="" class="link sub"><div class="round-sml">
+              <img class="profile" src="./images/profile.jpg" alt="">
+          </div>Kevin Powell</a>
+          <a href="" class="link sub"><div class="round-sml">
+              <img class="profile" src="./images/profile.jpg" alt="">
+          </div>Kevin Powell</a>
           <hr>
-          <span>more from youtube</span>
-          <a href="" class="link"><i class="fas fa-play"></i> YouTube Premium</a>
-          <a href="" class="link"><i class="fas fa-film"></i> Movies & Shows</a>
-          <a href="" class="link"><i class="fas fa-gamepad"></i> Gaming</a>
+          <span class="sidebar-heading">more from youtube</span>
+          <a href="" class="link"><i class="fab fa-youtube"></i>YouTube Premium</a>
+          <a href="" class="link"><i class="fas fa-film"></i>Movies & Shows</a>
+          <a href="" class="link"><i class="fas fa-gamepad"></i>Gaming</a>
           <a href="" class="link"><i class="fas fa-satellite-dish"></i> Live</a>
-          <a href="" class="link"><i class="fas fa-vest-patches"></i> Fashion & Beauty</a>
-          <a href="" class="link"><i class="far fa-lightbulb"></i> Learning</a>
-          <a href="" class="link"><i class="fas fa-trophy"></i> Sports</a>
+          <a href="" class="link"><i class="fas fa-vest-patches"></i>Fashion & Beauty</a>
+          <a href="" class="link"><i class="far fa-lightbulb"></i>Learning</a>
+          <a href="" class="link"><i class="fas fa-trophy"></i>Sports</a>
           <hr>
-          <a href="" class="link"><i class="fas fa-cog"></i> Settings</a>
-          <a href="" class="link"><i class="far fa-flag"></i> Report history</a>
-          <a href="" class="link"><i class="far fa-question-circle"></i> Help</a>
-          <a href="" class="link"><i class="fas fa-exclamation-circle"></i> Send feedback</a>
+          <a href="" class="link"><i class="fas fa-cog"></i>Settings</a>
+          <a href="" class="link"><i class="far fa-flag"></i>Report history</a>
+          <a href="" class="link"><i class="far fa-question-circle"></i>Help</a>
+          <a href="" class="link"><i class="fas fa-exclamation-circle"></i>Send feedback</a>
         </div>
       </aside>
       <section class="video"></section>

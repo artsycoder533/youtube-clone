@@ -15,7 +15,8 @@
     --search-btn-clr: #313131;
     --scrollbar-clr: #555555;
     --input-background-clr: #121212;
-    --sidebar-background-clr: #383838;
+    --sidebar-background-clr: #212121;
+    --sidebar-link-hover-clr: #383838;
 
     /* typography */;
     --light-weight: 100;
@@ -26,6 +27,7 @@
 }
 body {
     font-family: var(--main-font);
+    overflow: hidden;
 }
 
 /* global styles */
@@ -224,17 +226,24 @@ a{
 }
 
 .round,
+.round-sml,
 .round-lrg {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
 }
 
 .round{
     width: 40px;
     height: 40px;
-    border-radius: 50%;
     background: var(--main-background-clr);
+}
+
+.round-sml{
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
 }
 
 .round-lrg{
@@ -261,8 +270,12 @@ a{
     background: transparent;
 }
 
-.hamburger:hover{
+.hamburger:active{
     background: var(--main-background-clr);
+}
+
+.hamburger:hover{
+    
 }
 
 .line{
@@ -327,21 +340,69 @@ a{
 
 /* sidebar */
 .sidebar {
-    /* position: fixed;
-    top: 60px;
-    left: 0; */
-    padding-left: 1.3rem;
+    display: flex;
+    /* gap: 1rem; */
     width: 235px;
     min-height: 100vh;
     background: var(--sidebar-background-clr);
     color: var(--icon-text-clr);
-    border: 2px solid yellow;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-100%);
+    /* border: 2px solid yellow; */
 }
 
-.top {
-    border: 1px solid red;
+.links{
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    margin-top: 0.7rem;
+    width: 100%;
 }
 
 .link{
     display: flex;
+    font-size: 0.9rem;
+    padding: 0.7rem 0;
+    width: 100%;
 }
+
+.link:hover{
+    background: var(--sidebar-link-hover-clr);
+}
+
+.link i {
+    margin: 0 2.1rem;
+    font-size: 1.1rem;
+    color: var(--icon-text-clr);
+}
+
+.sub {
+    padding: 0.5rem;
+    align-items: center;
+    display: flex;
+    margin-left: 1.5rem;
+}
+
+.round-sml{
+    margin-right: 1.8rem;
+}
+
+.show-sidebar{
+    transform: translateX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar-heading{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--secondary-text-clr);
+    margin-bottom: 1rem;
+    margin-left: 2.1rem;
+}
+
+hr {
+    border: none;
+    background: var(--secondary-text-clr);
+    height: 1px;
+    margin: 1rem 0;
+}   
