@@ -14,7 +14,8 @@
     --icon-text-clr: #FFFFFF;
     --search-btn-clr: #313131;
     --scrollbar-clr: #555555;
-    --input-background-clr: #121212
+    --input-background-clr: #121212;
+    --sidebar-background-clr: #383838;
 
     /* typography */;
     --light-weight: 100;
@@ -28,6 +29,11 @@ body {
 }
 
 /* global styles */
+a{
+    color: var(--icon-text-clr);
+    text-decoration: none;
+    /* font-family: var(--main-font); */
+}
 
 /* custom scrollbar */
 /* width */
@@ -317,4 +323,25 @@ body {
 
 .logo{
     display: flex;
-}}}
+}
+
+/* sidebar */
+.sidebar {
+    /* position: fixed;
+    top: 60px;
+    left: 0; */
+    padding-left: 1.3rem;
+    width: 235px;
+    min-height: 100vh;
+    background: var(--sidebar-background-clr);
+    color: var(--icon-text-clr);
+    border: 2px solid yellow;
+}
+
+.top {
+    border: 1px solid red;
+}
+
+.link{
+    display: flex;
+}
